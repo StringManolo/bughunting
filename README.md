@@ -8,7 +8,9 @@ This repository contains a collection of personal scripts, tools, and configurat
 .
 ├── violentmonkey_scripts/
 │   └── google_pdf_dork_scraper.js
+├── pdfTextExtractor.sh
 └── README.md
+
 ```
 
 ## 🚀 Violentmonkey Scripts
@@ -22,7 +24,7 @@ To use these scripts, you need a User Script manager. **Violentmonkey** is recom
 **Browser Support:**
 
 * **Firefox / Tor Browser:** [Download from Mozilla Add-ons](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/)
-* **Chrome / Brave / Cromite:** [Download from Chrome Web Store](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag?pli=1)
+* **Chrome / Brave / Cromite:** [Download from Chrome Web Store](https://www.google.com/search?q=https://chromewebstore.google.com/detail/violentmonkey/jinjaccaljkbdnnccoaeallbneacijkh)
 
 ### 2. How to Install Scripts
 
@@ -49,28 +51,46 @@ There are two ways to install the scripts from this repository:
 
 ## 🛠️ Featured Scripts
 
-### Google PDF Dork Scraper
+### Google PDF Dork Scraper (User Script)
 
 Automates the extraction of PDF links from Google Search results when performing dorking (e.g., `site:target.com ext:pdf`).
 
 **Features:**
 
-* **Auto-Detection:** triggers automatically when `ext:pdf` or `filetype:pdf` is present in the search query.
-* **Pagination:** scrapes multiple pages of results automatically.
-* **Bulk Download:** generates a `curl` command to download all found files preserving the User-Agent to avoid 403 errors.
+* **Auto-Detection:** Triggers automatically when `ext:pdf` or `filetype:pdf` is present in the search query.
+* **Pagination:** Scrapes multiple pages of results automatically.
+* **Bulk Download:** Generates a `curl` command to download all found files preserving the User-Agent to avoid 403 errors.
+
+---
+
+### PDF Text & OCR Extractor (Bash Script)
+
+`pdfTextExtractor.sh` is a powerful CLI tool to process a directory full of PDFs. It extracts raw text and uses OCR (Optical Character Recognition) to find hidden text inside images embedded in the PDFs.
 
 **Usage:**
 
-1. Install the script.
-2. Go to Google and search: `site:example.com ext:pdf`
-3. Accept the prompt to start scraping.
-4. Use the panel to copy links or generate the download command.
+1. Place the `pdfTextExtractor.sh` script in the folder containing your `.pdf` files.
+2. Give it execution permissions: `chmod +x pdfTextExtractor.sh`.
+3. Run it: `./pdfTextExtractor.sh`.
 
-##### Audit PDFs
+**Features:**
+
+* **Deep Scan:** Extracts text with layout preservation.
+* **OCR Integration:** Automatically extracts images from PDFs and runs Tesseract (English/Spanish) on them to find text that `pdftotext` might miss.
+* **Progress Tracking:** Real-time percentage, file count, and ETA.
+* **Report Generation:** Consolidates everything into a single `report.txt` for easy grepping.
+
+---
+
+### Useful One-Liners
+
+#### Quick Metadata Audit
+
+To extract all metadata from PDFs in the current directory and save it for analysis:
+
 ```bash
-# Download the pdfs from your terminal using wget or curl
-# Then run the next command to extract metadata from them
 exiftool -a -u -g1 -extension pdf ./ > resume_pdfs.txt
+
 ```
 
 ---
