@@ -10,7 +10,6 @@ This repository contains a collection of personal scripts, tools, and configurat
 │   └── google_pdf_dork_scraper.js
 ├── pdfTextExtractor.sh
 └── README.md
-
 ```
 
 ## 🚀 Violentmonkey Scripts
@@ -80,6 +79,8 @@ Automates the extraction of PDF links from Google Search results when performing
 * **Progress Tracking:** Real-time percentage, file count, and ETA.
 * **Report Generation:** Consolidates everything into a single `report.txt` for easy grepping.
 
+> Once you have your report.txt, you can [load it here for analisis](https://stringmanolo.github.io/bughunting/pdfbughunter.html)
+
 ---
 
 ### Useful One-Liners
@@ -90,7 +91,6 @@ To extract all metadata from PDFs in the current directory and save it for analy
 
 ```bash
 exiftool -a -u -g1 -extension pdf ./ > resume_pdfs.txt
-
 ```
 
 ---
