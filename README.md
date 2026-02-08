@@ -66,6 +66,13 @@ Automates the extraction of PDF links from Google Search results when performing
 3. Accept the prompt to start scraping.
 4. Use the panel to copy links or generate the download command.
 
+##### Audit PDFs
+```bash
+# Download the pdfs from your terminal using wget or curl
+# Then run the next command to extract metadata from them
+exiftool -a -u -g1 -extension pdf ./ > resume_pdfs.txt
+```
+
 ---
 
 ## ⚠️ Disclaimer
