@@ -80,6 +80,7 @@ Automates the extraction of PDF links from Google Search results when performing
 * **Report Generation:** Consolidates everything into a single `report.txt` for easy grepping.
 
 > Once you have your report.txt, you can [load it here for analisis](https://stringmanolo.github.io/bughunting/pdfbughunter.html)
+<img width="1280" height="915" alt="pdfbughunterss" src="https://github.com/user-attachments/assets/17533616-c889-4a8e-a93a-cefca5b0442f" />
 
 ---
 
